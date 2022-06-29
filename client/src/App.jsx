@@ -1,45 +1,54 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import Axios from "axios";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [text, setText] = useState("");
+  const [data, setData] = useState("");
+  useEffect(() => {
+    const clear = setTimeout(() => {
+      if (text.length > 0) {
+        console.log("run")
+        Axios.post("https://emotions-server.herokuapp.com/popsicle", {
+          text: text,
+        }).then((res) => {
+          setData(res.data.res);
+        });
+      }
+    }, 1500);
 
+    return () => clearInterval(clear);
+  }, [text]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div className="font-Nanum sm:text-base md:text-3xl flex items-center justify-center h-screen bg-black">
+      <div>
+        <div className="my-2">
+          <label htmlFor="comment" className="block  text-white">
+            Write Some Text 📝
+          </label>
+          <div className="mt-1">
+            <textarea
+              name="comment"
+              id="comment"
+              className="shadow-sm p-2 focus:ring-indigo-500 focus:border-indigo-500 block  sm:text-base md:text-3xl border-gray-300 rounded-md"
+              onChange={(e) => setText(e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="my-2">
+          <label htmlFor="comment" className="block  text-white">
+            To Emoji ✨
+          </label>
+          <div className="mt-1">
+            <textarea
+              name="comment"
+              id="comment"
+              className="shadow-sm p-2 focus:ring-indigo-500 focus:border-indigo-500 block  sm:text-base md:text-3xl border-gray-300 rounded-md"
+              defaultValue={data}
+            />
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
-
-export default App
