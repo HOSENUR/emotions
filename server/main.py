@@ -15,6 +15,10 @@ words = pickle.load(open('words.pkl','rb'))
 classes = pickle.load(open('classes.pkl','rb'))
 model = load_model('model.h5')
 from EMOJIS import DATA
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('punkt')
+nltk.download('omw-1.4')
 
 def clean(sentence):
     sentence_words = nltk.word_tokenize(sentence)
@@ -59,8 +63,11 @@ def read_root():
 @app.post("/popsicle")
 async def translate(info : Request):
     req = await info.json()
-    ints = predict(req['text'])
-    res = DATA[getResponse(ints, intents)]
+    text = req['text']
+    res=""
+    for i in text.split(" "):
+        ints = predict(i)
+        res += DATA[getResponse(ints, intents)]
     return {
         "status" : "SUCCESS",
         "res" :res,

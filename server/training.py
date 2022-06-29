@@ -8,9 +8,7 @@ import pickle
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, Activation
 from tensorflow.keras.optimizers import SGD
-nltk.download('wordnet')
-nltk.download('punkt')
-nltk.download('omw-1.4')
+
 lemmatizer = WordNetLemmatizer()
 
 intents = json.loads(open('intents.json').read())

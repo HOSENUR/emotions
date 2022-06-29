@@ -13,5 +13,15 @@
         "tag":"broken heart",
         "patterns":["broke heart","heartbreak","</3"],
         "responses":[4,18]
+    },
+    {
+        "tag":"eat",
+        "patterns":["eating","ate","eat"],
+        "responses":[25]
+    },
+    {
+        "tag":"ice cream",
+        "patterns":["ice cream","popsicle"],
+        "responses":[26,27,28]
     }
 ]}

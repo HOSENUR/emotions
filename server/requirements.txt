@@ -4,3 +4,4 @@ nltk==3.7
 numpy==1.23.0
 tensorflow-cpu
 gunicorn
+uvicorn
