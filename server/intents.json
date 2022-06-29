@@ -1,7 +1,17 @@
 {"intents":[
     {
-        "tag":"",
+        "tag":"hi",
         "patterns":["hello","hey","hi","wave"],
-        "responses":["👋"]
+        "responses":[0,1,2]
+    },
+    {
+        "tag":"heart",
+        "patterns":["heart","love","<3"],
+        "responses":[3,5,6,7,8,9,10,11,12,13,14,15,16,17,19,20,21,22,23,24]
+    },
+    {
+        "tag":"broken heart",
+        "patterns":["broke heart","heartbreak","</3"],
+        "responses":[4,18]
     }
 ]}
