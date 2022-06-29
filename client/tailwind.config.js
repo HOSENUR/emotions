@@ -4,7 +4,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {"Nanum": ["Nanum Pen Script", "cursive"]},
+      fontFamily: {"patrick": ["Patrick Hand", "cursive"]},
     },
   },
   plugins: [],

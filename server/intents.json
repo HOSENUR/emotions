@@ -11,7 +11,7 @@
     },
     {
         "tag":"broken heart",
-        "patterns":["broke heart","heartbreak","</3"],
+        "patterns":["brokenheart","heartbreak","</3"],
         "responses":[4,18]
     },
     {
@@ -21,7 +21,22 @@
     },
     {
         "tag":"ice cream",
-        "patterns":["ice cream","popsicle"],
+        "patterns":["icecream","popsicle"],
         "responses":[26,27,28]
+    },
+    {
+        "tag":"i",
+        "patterns":["i","me"],
+        "responses":[29]
+    },
+    {
+        "tag":"you",
+        "patterns":["you","yu"],
+        "responses":[30]
+    },
+    {
+        "tag":"cat",
+        "patterns":["cat","meow","pussy","kitty"],
+        "responses":[31,32,33,34,35,36,37,38,39,40,41,42]
     }
 ]}

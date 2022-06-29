@@ -10,19 +10,19 @@ export default function App() {
       if (text.length > 0) {
         console.log("run")
         Axios.post("https://emotions-server.herokuapp.com/popsicle", {
-          text: text,
+          text: text.toLowerCase(),
         }).then((res) => {
           setData(res.data.res);
         });
       }
-    }, 1500);
+    }, 1000);
 
     return () => clearInterval(clear);
   }, [text]);
   return (
-    <div className="font-Nanum sm:text-base md:text-3xl flex items-center justify-center h-screen bg-black">
+    <div className="font-patrick sm:text-lg md:text-3xl flex items-center justify-center h-screen bg-black">
       <div>
-        <div className="my-2">
+        <div className="my-4">
           <label htmlFor="comment" className="block  text-white">
             Write Some Text 📝
           </label>
@@ -30,12 +30,12 @@ export default function App() {
             <textarea
               name="comment"
               id="comment"
-              className="shadow-sm p-2 focus:ring-indigo-500 focus:border-indigo-500 block  sm:text-base md:text-3xl border-gray-300 rounded-md"
+              className="shadow-sm p-2 focus:ring-indigo-500 focus:border-indigo-500 block  sm:text-lg  md:text-3xl border-gray-300 rounded-md"
               onChange={(e) => setText(e.target.value)}
             />
           </div>
         </div>
-        <div className="my-2">
+        <div className="my-4">
           <label htmlFor="comment" className="block  text-white">
             To Emoji ✨
           </label>
@@ -43,7 +43,7 @@ export default function App() {
             <textarea
               name="comment"
               id="comment"
-              className="shadow-sm p-2 focus:ring-indigo-500 focus:border-indigo-500 block  sm:text-base md:text-3xl border-gray-300 rounded-md"
+              className="shadow-sm p-2 focus:ring-indigo-500 focus:border-indigo-500 block  sm:text-lg md:text-3xl border-gray-300 rounded-md"
               defaultValue={data}
             />
           </div>

@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from email import message
 from typing import Union
+from fastapi.middleware.cors import CORSMiddleware
 import random
 import json
 import pickle
@@ -56,6 +56,17 @@ def getResponse(intents_list, intents_json):
 
 app = FastAPI()
 
+origins = [
+    "http://localhost:3000",
+    "https://emotions.nur.codes"
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 @app.get("/ping")
 def read_root():
     return {"res": "pong"}
