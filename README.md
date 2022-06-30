@@ -2,7 +2,7 @@
 # Emotions
 
 A text to emoji translator built using Tensorflow, NLTK in the backend.
-The UI is brought together with React, Firebase and TailWind.
+The UI is brought together with React and TailWind.
 
 ## API Reference
 
