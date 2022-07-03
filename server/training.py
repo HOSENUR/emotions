@@ -4,6 +4,10 @@ import json
 import numpy as np
 from nltk.stem import WordNetLemmatizer
 import nltk
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('punkt')
+nltk.download('omw-1.4')
 import pickle
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, Activation

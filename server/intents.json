@@ -31,12 +31,32 @@
     },
     {
         "tag":"you",
-        "patterns":["you","yu"],
+        "patterns":["you","yu","your","yours"],
         "responses":[30]
     },
     {
         "tag":"cat",
         "patterns":["cat","meow","pussy","kitty"],
         "responses":[31,32,33,34,35,36,37,38,39,40,41,42]
+    },
+    {
+        "tag":"school",
+        "patterns":["school","bag","college"],
+        "responses":[43,44]
+    },
+    {
+        "tag":"right",
+        "patterns":["the","right","to"],
+        "responses":[45]
+    },
+    {
+        "tag":"right",
+        "patterns":["the","right","to","a"],
+        "responses":[45]
+    },
+    {
+        "tag":"devil",
+        "patterns":["devil","evil","naughty","demon"],
+        "responses":[46,47,48,49,50,51]
     }
 ]}
