@@ -58,5 +58,15 @@
         "tag":"devil",
         "patterns":["devil","evil","naughty","demon"],
         "responses":[46,47,48,49,50,51]
+    },
+    {
+        "tag":"infinity",
+        "patterns":["forever","infinity","eternity"],
+        "responses":[53]
+    },
+    {
+        "tag":"eyes",
+        "patterns":["eyes","eye","look","see"],
+        "responses":[52]
     }
 ]}

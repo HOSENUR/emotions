@@ -78,7 +78,11 @@ async def translate(info : Request):
     res=""
     for i in text.split(" "):
         ints = predict(i)
-        res += DATA[getResponse(ints, intents)]
+        try:
+            res += DATA[getResponse(ints, intents)]
+        except:
+            res += i
+
     return {
         "status" : "SUCCESS",
         "res" :res,

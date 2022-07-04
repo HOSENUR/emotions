@@ -19,6 +19,7 @@ intents = json.loads(open('intents.json').read())
 words = []
 classes = []
 documents = []
+ignore = ['?', '!', '.', ',','a','in']
 
 for intent in intents["intents"]:
     for pattern in intent['patterns']:
