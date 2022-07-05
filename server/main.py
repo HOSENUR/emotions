@@ -14,7 +14,6 @@ intents = json.loads(open('intents.json').read())
 words = pickle.load(open('words.pkl','rb'))
 classes = pickle.load(open('classes.pkl','rb'))
 model = load_model('model.h5')
-from EMOJIS import DATA
 nltk.download('punkt')
 nltk.download('wordnet')
 nltk.download('punkt')
@@ -79,9 +78,9 @@ async def translate(info : Request):
     for i in text.split(" "):
         ints = predict(i)
         try:
-            res += DATA[getResponse(ints, intents)]
+            res += getResponse(ints, intents)+" "
         except:
-            res += i
+            res += i +" "
 
     return {
         "status" : "SUCCESS",

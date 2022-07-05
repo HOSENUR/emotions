@@ -21,7 +21,7 @@ export default function App() {
   }, [text]);
   return (
     <div className="min-h-screen bg-black font-patrick">
-      <div className="bg-rose-500 text-center ">Star ✨ me on GitHub</div>
+      <div className="bg-rose-500 w-full text-center "><a href="https://github.com/HOSENUR/emotions"> Star ✨ me on GitHub</a></div>
       <div className="h-5/6 my-2  w-full flex-col   flex items-center justify-center  ">
            <label htmlFor="comment" className="block  text-white">
           Write Some Text 📝

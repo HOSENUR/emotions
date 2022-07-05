@@ -1,6 +1,6 @@
 from copyreg import pickle
 import random
-import json
+import simplejson as json
 import numpy as np
 from nltk.stem import WordNetLemmatizer
 import nltk
@@ -15,7 +15,7 @@ from tensorflow.keras.optimizers import SGD
 
 lemmatizer = WordNetLemmatizer()
 
-intents = json.loads(open('intents.json').read())
+intents = json.loads((open('intents.json').read()), encoding='utf-8')
 words = []
 classes = []
 documents = []
